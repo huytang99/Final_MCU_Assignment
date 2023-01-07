@@ -10,10 +10,12 @@ int magnitude = 0;
 
 void pedestrian_run(){
 	switch(pedsStatus) {
+	
 	case NO_PED:
 		turnOffPeds();
 		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,0);
-		break;
+		break;		
+	
 	case PED_RED:
 		if(status == SETTING_GREEN1 || status == SETTING_GREEN2 || status == SETTING_YELLOW2 || status == SETTING_YELLOW1 || status == SETTING_RED2 || status == SETTING_RED1) {
 			turnOffPeds();
@@ -24,6 +26,7 @@ void pedestrian_run(){
 
 		}
 		break;
+	
 	case PED_GREEN:
 		if(status == SETTING_GREEN1 || status == SETTING_GREEN2 || status == SETTING_YELLOW2 || status == SETTING_YELLOW1 || status == SETTING_RED2 || status == SETTING_RED1) {
 			turnOffPeds();
@@ -39,6 +42,7 @@ void pedestrian_run(){
 			}
 		}
 		break;
+	
 	default:
 		break;
 	}

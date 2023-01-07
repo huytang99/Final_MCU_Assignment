@@ -10,6 +10,7 @@
 
 void tuning_run(){
 	switch(status){
+	
 	case SETTING_RED1:
 
 		if(timer1_flag){
@@ -47,6 +48,7 @@ void tuning_run(){
 		}
 
 		break;
+	
 	case SETTING_RED2:
 		if(timer1_flag){
 			setTimer1(1000);
@@ -81,6 +83,7 @@ void tuning_run(){
 			UART_display();
 		}
 		break;
+			
 	case SETTING_GREEN1:
 
 		if(timer1_flag){

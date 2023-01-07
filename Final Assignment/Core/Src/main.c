@@ -114,11 +114,12 @@ int main(void)
 
   while (1)
   {
+	
+    /* USER CODE END WHILE */
 	  automatic_run();
 	  manual_run();
 	  tuning_run();
 	  pedestrian_run();
-    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
