@@ -11,6 +11,45 @@
 void tuning_run(){
 	switch(status){
 	
+	case SETTING_RED1:
+
+		if(timer1_flag){
+//			timer1_flag = 0;
+			setTimer1(1000);
+			toggleRed1();
+		}
+
+		if(isButtonPressed(1)){
+			tuningReturnToAuto();
+			break;
+		}
+
+		if(isButtonPressed(0)){
+
+		}
+
+		if(isButtonPressed(2)){
+			isButtonPressed(3);
+			status = SETTING_RED2;
+			setTimer1(1000);
+			configRed1();
+			numberCounter = redDuration2;
+			UART_display();
+			turnOffTraffic1();
+			turnOffTraffic2();
+			break;
+		}
+
+		if(isButtonPressed(3)){
+			numberCounter++;
+			if(numberCounter > 60){
+				numberCounter = 2;
+			}
+			UART_display();
+		}
+
+		break;
+	
 	case SETTING_RED2:
 		if(timer1_flag){
 			timer1_flag = 0;
@@ -46,6 +85,7 @@ void tuning_run(){
 			UART_display();
 		}
 		break;
+			
 	case SETTING_GREEN1:
 
 		if(timer1_flag){
