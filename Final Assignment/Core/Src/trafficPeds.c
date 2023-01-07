@@ -27,4 +27,8 @@ void turnOffPeds(){
 }
 
 
-
+void UART_display(){
+	int d1 = numberCounter / 10;
+	int d2 = numberCounter % 10;
+	HAL_UART_Transmit(&huart2, (void*)str, sprintf(str, "!7SEG=%d%d#\r\n", d1, d2), 1000);
+}
