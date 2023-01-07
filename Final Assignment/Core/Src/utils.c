@@ -56,7 +56,11 @@ void tuningReturnToAuto(){
 		default:
 			break;
 	}
-	
+	status = AUTO_RED_GREEN;
+	setTimer1(1000);
+	numberCounter = redDuration1;
+	UART_display();
+	Red_1();
 	Green_2();
 }
 
