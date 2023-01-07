@@ -116,6 +116,10 @@ int main(void)
   {
 	
     /* USER CODE END WHILE */
+	  automatic_run();
+	  manual_run();
+	  tuning_run();
+	  pedestrian_run();
 
     /* USER CODE BEGIN 3 */
   }
